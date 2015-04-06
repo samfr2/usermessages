@@ -5,7 +5,8 @@ public class Driver {
 		// TODO Auto-generated method stub
 		
 		
-		
+		 FrontEnd gui = new FrontEnd();
+		 
 		
 		
 	}
