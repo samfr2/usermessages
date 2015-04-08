@@ -35,6 +35,7 @@ public class FrontEnd {
 		vBox.add(lineBox);
 		vBox.add(subtitle2Box);
 		vBox.add(finduserBox);
+		vBox.add(Box.createVerticalStrut(5));
 		vBox.add(outputBox);
 		frame.getContentPane().setBackground(Color.BLACK);
 		//titleBox
@@ -67,10 +68,11 @@ public class FrontEnd {
 		JLabel user = new JLabel("User:");
 		user.setFont(new Font("Comic Sans MS",Font.PLAIN, 12));
 		user.setForeground(Color.WHITE);
-		String[] users = new String[0];
-		users = myBackEnd.getUsers().toArray(users);
-		JComboBox<String> comboBox = new JComboBox<String>(users);
-		addmessuserBox.add(Box.createHorizontalStrut(100));
+		JTextField comboBox = new JTextField();
+		comboBox.setPreferredSize(new Dimension(356,50));
+		comboBox.setMaximumSize(new Dimension(356,50));
+		comboBox.setMinimumSize(new Dimension(356,50));
+		addmessuserBox.add(Box.createHorizontalStrut(97));
 		addmessuserBox.add(user);
 		addmessuserBox.add(comboBox);
 		addmessuserBox.add(Box.createHorizontalStrut(100));
@@ -79,7 +81,10 @@ public class FrontEnd {
 		message.setFont(new Font("Comic Sans MS", Font.PLAIN, 12));
 		message.setForeground(Color.WHITE);
 		JTextField messagefield = new JTextField();
-		addmessBox.add(Box.createHorizontalStrut(81));
+		messagefield.setPreferredSize(new Dimension(356,50));
+		messagefield.setMaximumSize(new Dimension(356,50));
+		messagefield.setMinimumSize(new Dimension(356,50));
+		addmessBox.add(Box.createHorizontalStrut(78));
 		addmessBox.add(message);
 		addmessBox.add(messagefield);
 		addmessBox.add(Box.createHorizontalStrut(100));
@@ -104,18 +109,21 @@ public class FrontEnd {
 		JLabel user2 = new JLabel("User:");
 		user2.setFont(new Font("Comic Sans MS",Font.PLAIN, 12));
 		user2.setForeground(Color.WHITE);
+		String[] users = new String[0];
 		users = myBackEnd.getUsers().toArray(users);
 		JComboBox<String> comboBox2 = new JComboBox<String>(users);
 		JButton ok2 = new JButton("OK");
+		finduserBox.add(Box.createHorizontalStrut(100));
 		finduserBox.add(user2);
 		finduserBox.add(comboBox2);
 		finduserBox.add(ok2);
+		finduserBox.add(Box.createHorizontalStrut(100));
 		
 		//outputBox
 		final JTextPane defPane = new JTextPane();
 		JScrollPane defScroll = new JScrollPane(defPane);
 		
-		outputBox.add(Box.createHorizontalStrut(78));
+		outputBox.add(Box.createHorizontalStrut(131));
 		outputBox.add(defScroll);
 		outputBox.add(Box.createHorizontalStrut(100));
 		
