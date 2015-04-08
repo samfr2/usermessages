@@ -145,7 +145,14 @@ public class FrontEnd {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				String username = comboBox2.toString();
+				String w = "";
+				for(String s:BackEnd.getMessages(username))
+				{
+					w += s;
+					w += " ";
+				}
+				defPane.setText(w);
 				
 			}});
 		

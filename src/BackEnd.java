@@ -14,7 +14,7 @@ public class BackEnd {
 		usermsgs=new TreeMap<String,ArrayList<String>>();
 	}
 	
-	public List<String> getMessages(String username){
+	public static List<String> getMessages(String username){
 		
 		return usermsgs.get(username);
 	}
