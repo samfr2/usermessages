@@ -17,7 +17,7 @@ public class Encoder
 	public void write(String plaintext)
 	{
 		try {
-			String[] code = {"Alpha","Bravo","Charlie","Delta","Echo","Foxtrot","Golf","Hotel","India","Juliett","Kilo","Lima","Mike","Novermber","Oscar","Papa","Quebec","Romeo","Sierra","Tango","Uniform","Victor","Whiskey","X-ray","Yankee","Zulu"};
+			String[] code = {"Alpha","Bravo","Charlie","Delta","Echo","Foxtrot","Golf","Hotel","India","Juliett","Kilo","Lima","Mike","Novermber","Oscar","Papa","Quebec","Romeo","Sierra","Tango","Uniform","Victor","Whiskey","X-ray","Yankee","Zulu","alpha","bravo","charlie","delta","echo","foxtrot","golf","hotel","india","juliett","kilo","lima","mike","novermber","oscar","papa","quebec","romeo","sierra","tango","uniform","victor","whiskey","x-ray","yankee","zulu"};
 			PrintWriter pout = new PrintWriter(new File(myFile));
 			String[] letters = plaintext.split("");
 			for(String x: letters)
@@ -72,4 +72,11 @@ public class Encoder
 		return msg;
 			
 	}
-}
+	
+	public static void main(String[] args) {
+		Encoder e = new Encoder ("foo.txt");
+		e.write("Hello World");
+		System.out.println(e.read());
+	}
+	}
+
