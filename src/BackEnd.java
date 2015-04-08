@@ -7,7 +7,7 @@ import java.util.TreeMap;
 public class BackEnd {
 
 	
-	private Map<String,ArrayList<String>> usermsgs;
+	private static Map<String,ArrayList<String>> usermsgs;
 	
 	
 	public BackEnd(){
@@ -19,7 +19,7 @@ public class BackEnd {
 		return usermsgs.get(username);
 	}
 	
-	public void addMessage(String username,String msg){
+	public static void addMessage(String username,String msg){
 		
 		ArrayList<String> a;
 		if(!usermsgs.keySet().contains(username)){

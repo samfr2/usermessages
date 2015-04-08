@@ -127,9 +127,35 @@ public class FrontEnd {
 		outputBox.add(defScroll);
 		outputBox.add(Box.createHorizontalStrut(100));
 		
+		ok.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				String username = comboBox.getText();
+				String message = messagefield.getText();
+				BackEnd.addMessage(username, message);
+				comboBox2.addItem(username);
+				comboBox.setText("");
+				messagefield.setText("");
+				
+				
+				
+			}});
+		ok2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}});
+		
 		
 		frame.pack();
 		frame.setVisible(true);
+		
+		
+		
+		
 		
 	}
 	
