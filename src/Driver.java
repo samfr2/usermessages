@@ -1,14 +1,16 @@
+import javax.swing.SwingUtilities;
+
 
 public class Driver {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		
-		 FrontEnd gui = new FrontEnd();
-		 
-		
-		
+		SwingUtilities.invokeLater(new Runnable() {
+
+			@Override
+			public void run() 
+			{
+				new FrontEnd();
+			}} );
 	}
 
 }
