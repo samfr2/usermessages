@@ -61,7 +61,7 @@ public class Encoder
 				String msg = "";
 				for(String x: line)
 				{
-					msg+=x.substring(0);
+					msg+=x.substring(0, 1);
 				}
 				msgs.add(msg);
 			}
