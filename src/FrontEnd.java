@@ -150,7 +150,7 @@ public class FrontEnd {
 				for(String s:BackEnd.getMessages(username))
 				{
 					w += s;
-					w += " ";
+					w += "\n";
 				}
 				defPane.setText(w);
 				
