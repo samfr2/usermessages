@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,25 +24,25 @@ public class Encoder
 			String[] letters = plaintext.split("");
 			for(String x: letters)
 			{
-			if(x.equals(" "))
-			{
-				pout.print("\n");
-			}
-			else
+			if(Character.isLetter(x.charAt(0)))
 			{
 				for(String y: code)
 				{
-					if(x.substring(0,1).equals(y.substring(0,1)))
+					if(x.equals(y.substring(0,1)))
 					{
 						pout.print(y+" ");
 					}
 				}
-			}
 			
+			
+			}
+			else
+			{
+				pout.print(x);
 			}
 			pout.close();
 			
-		} catch (FileNotFoundException e) {
+		}} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -48,7 +50,7 @@ public class Encoder
 	
 	public List<String> read()
 	{
-		ArrayList<String> msg = new ArrayList<String>();
+		ArrayList<String> msgs = new ArrayList<String>();
 		try {
 			Scanner scan = new Scanner(new File(myFile));
 			String nextLine = "";
@@ -56,26 +58,25 @@ public class Encoder
 			{
 				nextLine = scan.nextLine();
 				String[] line = nextLine.split(" ");
-				String word = "";
+				String msg = "";
 				for(String x: line)
 				{
-					word+=x.substring(0, 1);
+					msg+=x.substring(0, 1);
 				}
-				msg.add(word);
-				msg.add(" ");
+				msgs.add(msg);
 			}
 			scan.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return msg;
+		return msgs;
 			
 	}
 	
 	public static void main(String[] args) {
 		Encoder e = new Encoder ("foo.txt");
-		e.write("Hello World");
+		e.write("YubNub, Echop YubNub");
 		System.out.println(e.read());
 	}
 	}
