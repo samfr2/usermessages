@@ -8,12 +8,12 @@ public class BackEnd {
 
 	
 	private static Map<String,ArrayList<String>> usermsgs;
-	private Encoder encoder;
+	
 	
 	
 	public BackEnd(){
 		usermsgs=new TreeMap<String,ArrayList<String>>();
-		encoder=new Encoder("placeholder");
+		
 	}
 	
 	public static List<String> getMessages(String username){
@@ -23,14 +23,14 @@ public class BackEnd {
 	
 	public static void addMessage(String username,String msg){
 		
-		
-		
 		ArrayList<String> a;
 		if(!usermsgs.keySet().contains(username)){
 			a= new ArrayList<String>();
+			
 		}
 		else a= usermsgs.get(username);
-		
+		Encoder encoder=new Encoder(username+".txt");
+		encoder.write(msg);
 		a.add(msg);
 		usermsgs.put(username,a);
 		
