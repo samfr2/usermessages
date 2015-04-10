@@ -15,12 +15,12 @@ public class Encoder
 	{
 		myFile = fileName;
 	}
-	
+	//,"alpha","bravo","charlie","delta","echo","foxtrot","golf","hotel","india","juliett","kilo","lima","mike","novermber","oscar","papa","quebec","romeo","sierra","tango","uniform","victor","whiskey","x-ray","yankee","zulu"
 	public void write(String plaintext)
 	{
 		try {
-			String[] code = {"Alpha","Bravo","Charlie","Delta","Echo","Foxtrot","Golf","Hotel","India","Juliett","Kilo","Lima","Mike","Novermber","Oscar","Papa","Quebec","Romeo","Sierra","Tango","Uniform","Victor","Whiskey","X-ray","Yankee","Zulu","alpha","bravo","charlie","delta","echo","foxtrot","golf","hotel","india","juliett","kilo","lima","mike","novermber","oscar","papa","quebec","romeo","sierra","tango","uniform","victor","whiskey","x-ray","yankee","zulu"};
-			FileWriter pout = new FileWriter(new File(myFile));
+			String[] code = {"Alpha","Bravo","Charlie","Delta","Echo","Foxtrot","Golf","Hotel","India","Juliett","Kilo","Lima","Mike","Novermber","Oscar","Papa","Quebec","Romeo","Sierra","Tango","Uniform","Victor","Whiskey","X-ray","Yankee","Zulu"};
+			FileWriter pout = new FileWriter(new File(myFile),true);
 			String[] letters = plaintext.split("");
 			for(String x: letters)
 			{
@@ -28,9 +28,9 @@ public class Encoder
 			{
 				for(String y: code)
 				{
-					if(x.equals(y.substring(0,1)))
+					if(x.equalsIgnoreCase(y.substring(0,1)))
 					{
-						pout.write(y+"\t");
+						pout.write("\t"+y);
 					}
 				}
 			
@@ -61,7 +61,7 @@ public class Encoder
 				String msg = "";
 				for(String x: line)
 				{
-					msg+=x.substring(0,1);
+					msg+=x.substring(0);
 				}
 				msgs.add(msg);
 			}
@@ -77,7 +77,7 @@ public class Encoder
 	public static void main(String[] args) {
 		Encoder e = new Encoder ("foo.txt");
 		e.write("YubNub, Echop YubNub");
-		e.write("Atoh meet topeecheekene gnoop dock fling oh ah");
+		e.write("Atoh Meet Topeecheekene Gnoop Dock Fling Oh Ah");
 		System.out.println(e.read());
 	}
 	}
