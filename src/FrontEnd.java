@@ -60,7 +60,7 @@ public class FrontEnd {
 		
 		//subtitleBox
 		JLabel subtitle = new JLabel("Add Message");
-		subtitle.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
+		subtitle.setFont(new Font("Comic Sans MS", Font.ITALIC, 18));
 		subtitle.setForeground(Color.WHITE);
 		subtitleBox.add(subtitle);
 		
