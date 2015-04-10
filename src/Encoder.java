@@ -30,7 +30,7 @@ public class Encoder
 				{
 					if(x.equals(y.substring(0,1)))
 					{
-						pout.print(y+" ");
+						pout.print(y+"\t");
 					}
 				}
 			
@@ -57,11 +57,11 @@ public class Encoder
 			while(scan.hasNextLine()==true)
 			{
 				nextLine = scan.nextLine();
-				String[] line = nextLine.split(" ");
+				String[] line = nextLine.split("\t");
 				String msg = "";
 				for(String x: line)
 				{
-					msg+=x.substring(0);
+					msg+=x.substring(0,1);
 				}
 				msgs.add(msg);
 			}
