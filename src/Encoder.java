@@ -40,9 +40,9 @@ public class Encoder
 			{
 				pout.print(x);
 			}
-			pout.close();
 			
-		}} catch (FileNotFoundException e) {
+			
+		}pout.close();} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -61,7 +61,7 @@ public class Encoder
 				String msg = "";
 				for(String x: line)
 				{
-					msg+=x.substring(0, 1);
+					msg+=x.substring(0);
 				}
 				msgs.add(msg);
 			}
