@@ -20,7 +20,7 @@ public class Encoder
 	{
 		try {
 			String[] code = {"Alpha","Bravo","Charlie","Delta","Echo","Foxtrot","Golf","Hotel","India","Juliett","Kilo","Lima","Mike","Novermber","Oscar","Papa","Quebec","Romeo","Sierra","Tango","Uniform","Victor","Whiskey","X-ray","Yankee","Zulu","alpha","bravo","charlie","delta","echo","foxtrot","golf","hotel","india","juliett","kilo","lima","mike","novermber","oscar","papa","quebec","romeo","sierra","tango","uniform","victor","whiskey","x-ray","yankee","zulu"};
-			PrintWriter pout = new PrintWriter(new File(myFile));
+			FileWriter pout = new FileWriter(new File(myFile));
 			String[] letters = plaintext.split("");
 			for(String x: letters)
 			{
@@ -30,7 +30,7 @@ public class Encoder
 				{
 					if(x.equals(y.substring(0,1)))
 					{
-						pout.print(y+"\t");
+						pout.write(y+"\t");
 					}
 				}
 			
@@ -38,11 +38,11 @@ public class Encoder
 			}
 			else
 			{
-				pout.print(x);
+				pout.write(x);
 			}
 			
 			
-		}pout.close();} catch (FileNotFoundException e) {
+		}pout.write("\n");pout.close();} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -77,6 +77,7 @@ public class Encoder
 	public static void main(String[] args) {
 		Encoder e = new Encoder ("foo.txt");
 		e.write("YubNub, Echop YubNub");
+		e.write("Atoh meet topeecheekene gnoop dock fling oh ah");
 		System.out.println(e.read());
 	}
 	}
